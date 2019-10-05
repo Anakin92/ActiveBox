@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ActiveBox</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:400,700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+  <style>
+
+  body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #6c7279;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  }
+
+  p {
+  margin: 0 0 10px;
+  }
+
+  .container {
+    width:100%;
+    max-width:1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .header {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1000;
+  }
+
+  .header__inner {
+    padding: 35px 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #515369;
+  }
+
+  .nav {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .nav__link {
+  margin-left: 50px;
+  color: white;
+  opacity: 0.75;
+  }
+
+  .landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 750px;
+  padding-top: 100px;
+  background: url('images/banner.jpg') center;
+  margin-bottom:100px;
+  }
+
+  .landing__title {
+    margin: 0 0 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 65px;
+    line-height: 1.1;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .langing__inner {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  text-align: center;
+  }
+
+  .landing_subtitle {
+  font-size: 22px;
+  color:white;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 75px;
+  }
+
+  .btn {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 2px;
+  }
+
+ .btn--top {
+   background-color: #e84545;
+ }
+
+
+ .desctiptionimages {
+   margin-bottom: 30px;
+ }
+
+ .productheader {
+   text-align: center;
+   font-size:14px;
+   font-weight: 700;
+   color: #2d3033;
+   margin-bottom: 15px;
+ }
+
+ .container2 {
+   padding-left: 300px;
+   padding-right: 300px;
+   text-align: center;
+  margin-bottom: 30px;
+ }
+
+ .container3 {
+   padding-left: 300px;
+   padding-right: 300px;
+   text-align: center;
+  margin-bottom: 100px;
+ }
+
+
+.productdescription{
+font-size:14px;
+line-height: 1.5;
+color:#6c7279
+}
+
+.works {
+display: flex;
+flex-wrap: wrap;
+padding-bottom: 50px;
+
+
+}
+
+.works__item{
+width: 25%;
+border-bottom: 1px solid white;
+border-right: 1px solid white;
+height: 350px;
+position:relative;
+overflow: hidden;
+
+
+}
+
+.works__item:hover .works__content {
+  opacity:1;
+}
+
+
+.works__photo {
+  position:absolute;
+  top:0%;
+  left: 0%;
+  z-index: 1;
+
+}
+
+.works__content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+background-color: rgba(232, 69, 69, 0.9);
+width: 100%;
+height: 100%;
+position: absolute;
+top:0%;
+left: 0%;
+z-index: 2;
+opacity: 0;
+}
+
+.works__title{
+margin-bottom: 5px;
+font-size: 14px;
+font-weight: 700;
+color:white;
+}
+
+.works__text{
+font-size: 14px;
+color:white;
+}
+
+.team {
+margin-bottom: 100px;
+
+
+}
+
+.team__inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin 0 -15px;
+}
+
+.team__item {
+  width: 25%;
+}
+
+.team__photo {
+  margin-bottom: 20px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.team__name {
+font-size: 22px;
+color: #2d3033;
+margin-bottom: 5px;
+}
+
+.team__prof {
+margin-bottom:15px;
+font-size: 13px;
+color: #e84545;
+}
+
+.team__text {
+font-size: 14px;
+line-height: 1.5;
+color: #6c7279;
+}
+
+.team__social {
+display: flex;
+}
+
+.social__item {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 4px;
+margin-bottom: 100px;
+ width: 40px;
+ height: 40px;
+border: 1px solid #e8ecee;
+}
+
+.reviews {
+  background-color: #53354a;
+  overflow: hidden;
+  margin-bottom: 90px;
+
+}
+
+.reviews__item {
+display: flex;
+flex-wrap: wrap;
+}
+
+.reviews__photo {
+  width: 50%;
+  height: 500px;
+  position: relative;
+}
+
+.reviews__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-left: 80px;
+}
+
+.reviews__text {
+  margin-bottom: 20px;
+  font-family: 'Cardo', sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1.2;
+  color:white;
+}
+
+.reviews__img {
+position: absolute;
+top: 0;
+right: 0;
+z-index: 1;
+}
+
+.reviews__author {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.download {
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+.download__title {
+margin-bottom: 10px;
+ font-size: 28px;
+ color:#2d3033;
+ font-weight: 300;
+
+}
+
+.download__text {
+font-size: 13px;
+color:#2d3033;
+font-weight: 700;
+text-transform: uppercase;
+margin-bottom: 30px;
+}
+
+.btn--big {
+  min-width: 280px;
+}
+
+.footer {
+  background-color: #3a3e64;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 70px 0;
+}
+
+.footer__block {
+  width: 33%;
+  text-align: center;
+}
+
+.footer__title {
+margin-bottom: 10px;
+font-size: 14px;
+font-weight: 700;
+color:white;
+}
+
+.footer__address {
+  font-size: 14px;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+.social--footer {
+  justify-content: center;
+}
+
+.footer__text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+.copyright {
+  background-color: #313454;
+  padding:20px 0;
+}
+
+.copyright__text {
+  text-align: center;
+  font-size:14px;
+  line-height: 1.5;
+  color:grey;
+}
+
+.copyright__text span {
+  color: white;
+}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="images/logo.png" alt="logo">
+        </div>
+        <nav class="nav">
+          <a class="nav__link" href="#">FEATURES</a>
+          <a class="nav__link" href="#">WORKS</a>
+          <a class="nav__link" href="#">OUR TEAM</a>
+          <a class="nav__link" href="#">TESTIMONIALS</a>
+          <a class="nav__link" href="#">DOWNLOAD</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="landing">
+    <div class="container">
+      <div class="langing__inner">
+        <h1 class="landing__title">Your Favorite One Page Multi Purpose Template</h1>
+        <h2 class="landing_subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis facilis, qui, consequuntur numquam non dicta quo. </h2>
+        <a class="btn btn--top" href="#">FIND OUT MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container2">
+    <div class="row">
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/1.png" alt="firstitem"></a>
+        <h3 class="productheader">EASILY CUSTOMIZED</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/2.png" alt="seconditem"></a>
+        <h3 class="productheader">RESPONSIVE READY</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/3.png" alt="thirditem"></a>
+        <h3 class="productheader">MODERN DESIGN</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="row">
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/4.png" alt="fourthitem"></a>
+        <h3 class="productheader">CLEAN CODE</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/5.png" alt="fifthitem"></a>
+        <h3 class="productheader">READY TO SHIP</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+      <div class="col"><a href="#"><img class="desctiptionimages" src="images/6.png" alt="sixitem"></a>
+        <h3 class="productheader">DOWNLOAD FOR FREE</h3>
+        <article class="productdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum temporibus quis autem perspiciatis dolorem saepe, quia totam, corporis rem at deleniti impedit voluptates!
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="works">
+    <div class="works__item">
+      <img class="works__photo" src="images/work-1.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-2.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-3.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-4.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-5.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-6.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-7.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="images/work-8.jpg" alt="work1">
+        <div class="works__content">
+          <div class="works__title">PROJECT NAME</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+  </div>
+
+<div class="team">
+  <div class="container">
+    <div class="team__inner">
+      <div class="team__item">
+        <img class="team__photo" src="images/team-1.jpg" alt="">
+        <div class="team__name">Ruth Woods</div>
+        <div class="team__prof">FOUNDER,CEO</div>
+        <div class="team__text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, nam praesentium doloremque eaque modi! Corporis nulla, numquam autem laboriosam doloremque consequatur, repudiandae blanditiis! Tempore repellat itaque expedita excepturi, iure error delectus voluptatibus consectetur perferendis commodi, facere autem?</p></div>
+        <div class="team__social">
+          <a class="social__item" href="">
+          <img src="images/facebook.svg" height="18 "alt="">
+          </a>
+
+          <a class="social__item" href="">
+          <img src="images/twitter.svg" height="18 "alt="">
+          </a>
+
+          <a class="social__item" href="">
+          <img src="images/linkedin.svg" height="18 "alt="">
+          </a>
+
+        </div>
+        </div>
+
+        <div class="team__item">
+          <img class="team__photo" src="images/team-2.jpg" alt="">
+          <div class="team__name">Timothy Reed</div>
+          <div class="team__prof">CO-FOUNDER, DEVELOPER</div>
+          <div class="team__text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, nam praesentium doloremque eaque modi! Corporis nulla, numquam autem laboriosam doloremque consequatur, repudiandae blanditiis! Tempore repellat itaque expedita excepturi, iure error delectus voluptatibus consectetur perferendis commodi, facere autem?</p></div>
+          <div class="team__social">
+            <a class="social__item" href="">
+            <img src="images/facebook.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/twitter.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/linkedin.svg" height="18 "alt="">
+            </a>
+
+          </div>
+
+
+        </div>
+
+        <div class="team__item">
+          <img class="team__photo" src="images/team-3.jpg" alt="">
+          <div class="team__name">Victoria Valdez</div>
+          <div class="team__prof">UI DESIGNER</div>
+          <div class="team__text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, nam praesentium doloremque eaque modi! Corporis nulla, numquam autem laboriosam doloremque consequatur, repudiandae blanditiis! Tempore repellat itaque expedita excepturi, iure error delectus voluptatibus consectetur perferendis commodi, facere autem?</p></div>
+          <div class="team__social">
+
+            <a class="social__item" href="">
+            <img src="images/facebook.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/twitter.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/linkedin.svg" height="18 "alt="">
+            </a>
+
+          </div>
+        </div>
+
+        <div class="team__item">
+          <img class="team__photo" src="images/team-4.jpg" alt="">
+          <div class="team__name">Beverly Little</div>
+          <div class="team__prof">DATA SCIENTIST</div>
+          <div class="team__text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, nam praesentium doloremque eaque modi! Corporis nulla, numquam autem laboriosam doloremque consequatur, repudiandae blanditiis! Tempore repellat itaque expedita excepturi, iure error delectus voluptatibus consectetur perferendis commodi, facere autem?</p></div>
+          <div class="team__social">
+
+            <a class="social__item" href="">
+            <img src="images/facebook.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/twitter.svg" height="18 "alt="">
+            </a>
+
+            <a class="social__item" href="">
+            <img src="images/linkedin.svg" height="18 "alt="">
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <div class="reviews">
+    <div class="container">
+
+      <div class="reviews__item">
+        <div class="reviews__photo">
+          <img class="reviews__img" src="images/testimonial-1.jpg" alt="">
+        </div>
+        <div class="reviews__content">
+          <div class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae perferendis dolorem inventore, reprehenderit quaerat deleniti.</div>
+          <div class="reviews__author">SUSAN SIMS, INTERACTION DESIGNER AT XYZ</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<div class="download">
+  <div class="container">
+    <h3 class="download__title">Are You Ready to Start? Download Now For Free!</h3>
+    <div class="download__text"><p>Lorem ipsum dolor sit amet, consectetur.</p></div>
+    <a class="btn btn--top btn--big" href="">DOWNLOAD HERE</a>
+  </div>
+</div>
+
+<footer class="footer">
+<div class="container">
+  <div class="footer__inner">
+    <div class="footer__block">
+      <h4 class="footer__title">LOCATION</h4>
+        <address class="footer__address">
+          <div>3481 Melrose Place</div>
+          <div>Beberly Hills, CA 90210</div>
+        </address>
+    </div>
+
+    <div class="footer__block">
+      <h4 class="footer__title">SHARE WITH LOVE</h4>
+      <div class="team__social social--footer">
+
+        <a class="social__item" href="">
+        <img src="images/facebook.svg" height="18 "alt="">
+        </a>
+
+        <a class="social__item" href="">
+        <img src="images/twitter.svg" height="18 "alt="">
+        </a>
+
+        <a class="social__item" href="">
+        <img src="images/linkedin.svg" height="18 "alt="">
+        </a>
+
+      </div>
+
+
+    </div>
+
+    <div class="footer__block">
+      <h4 class="footer__title">ABOUT ACTIVEBOX</h4>
+        <div class="footer__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, odio distinctio. Deserunt numquam vero eum nesciunt aperiam!</p>
+        </div>
+    </div>
+
+  </div>
+</div>
+  <div class="copyright">
+    <div class="container">
+      <div class="copyright__text">
+        <div>Copyright © 2015 ActiveBox. All Rights Reserved</div>
+        <div>Made with ❤ by <span>Kamal Chaneman</span></div>
+    </div>
+  </div>
+</div>
+</footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
